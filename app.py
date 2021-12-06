@@ -70,7 +70,9 @@ else:
     st.write(df)
 
 # Reads in saved classification model
-load_clf = pickle.load(open('titanic_clf.pkl', 'rb'))
+load_clf = xgb.Booster()
+load_clf.load_model("model.json")
+
 
 # Apply model to make predictions
 prediction = load_clf.predict(df)
