@@ -75,7 +75,8 @@ load_clf.load_model("model.json")
 
 
 # Apply model to make predictions
-prediction = load_clf.predict(df)
+dtest = xgb.DMatrix(df)
+prediction = load_clf.predict(dtest)
 prediction_proba = load_clf.predict_proba(df)
 
 
