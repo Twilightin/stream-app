@@ -9,4 +9,4 @@ requests==2.22.0
 json5==0.9.4
 Pillow==7.0.0
 xgboost==0.90
-sklearn==1.0.1
+scikit-learn==1.0.1
