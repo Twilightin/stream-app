@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
-import xgboost as xgb # XGBoost stuff
+# import xgboost as xgb # XGBoost stuff
 
 st.write("""
 # Penguin Prediction App
