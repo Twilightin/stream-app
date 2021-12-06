@@ -81,7 +81,7 @@ load_clf2.load_model("model.json")
 dtest = xgb.DMatrix(df)
 prediction = load_clf.predict(dtest)
 
-prediction_proba = load_clf2.predict_proba(df)
+prediction_proba = load_clf2.predict(df)
 
 
 st.subheader('Prediction')
