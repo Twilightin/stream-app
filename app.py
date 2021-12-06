@@ -47,6 +47,7 @@ else:
 
 # Combines user input features with entire penguins dataset
 # This will be useful for the encoding phase
+
 titanic_raw = pd.read_csv('titanic_cleaned.csv',index_col=0)
 titanic = titanic_raw.drop(columns=['Survived'])
 df = pd.concat([input_df,titanic],axis=0)
@@ -73,11 +74,14 @@ else:
 load_clf = xgb.Booster()
 load_clf.load_model("model.json")
 
+load_clf2 = xgb.XGBRegressor()
+load_clf2.load_model("model.json")
 
 # Apply model to make predictions
 dtest = xgb.DMatrix(df)
 prediction = load_clf.predict(dtest)
-prediction_proba = load_clf.predict_proba(df)
+
+prediction_proba = load_clf2.predict_proba(df)
 
 
 st.subheader('Prediction')
